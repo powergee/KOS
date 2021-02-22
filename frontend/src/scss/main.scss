@@ -1,16 +1,38 @@
 // base
 @import './base/variable';
-@import './base/backColor.scss';
+@import './base/backColor';
 @import './base/reset';
+@import './base/material';
 
 // components
 @import './components/btn';
+@import './components/sideMenu';
+@import './components/member';
 @import './components/app';
 @import './components/sidebar';
+@import './components/list';
 @import './components/page';
+@import './components/windowheader';
 @import './components/projectheader';
-@import './components/pageheader';
 @import './components/window';
+@import './components/attributevaluepair';
+@import './components/attributebutton';
+@import './components/valuefield';
+@import './components/valueselect';
+@import './components/selectitem';
+@import './components/datepicker';
+@import './components/tag';
+@import './components/taskwindow';
+@import './components/taskcard';
+@import './components/textfield';
+@import './components/url';
+@import './components/attriselect';
+@import './components/emojilist';
+@import './components/emojipicker';
+@import './components/settingwindow';
+@import './components/valueselectoptionsetting';
+@import './components/taskcardmenu';
+@import './components/moveto';
 
 //layout
 @import './layout/grid';

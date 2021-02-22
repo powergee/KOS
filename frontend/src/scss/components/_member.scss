@@ -1,0 +1,46 @@
+.member{
+    padding: 7px;
+    color: white;
+	margin-right: -10px;
+	cursor: pointer;
+	&.smile{
+		background-color: rgb(214, 149, 28);
+	}
+	&.pet{
+		background-color: rgb(46, 63, 99);
+	}
+	&.audio{
+		background-color: rgb(206, 188, 27);
+	}
+	&.beach{
+		background-color: rgb(60, 170, 165);
+	}
+	&.cake{
+		background-color: rgb(179, 77, 94);
+	}
+	&.apple{
+		background-color: gray;
+	}
+	&.child{
+		background-color: rgb(98, 69, 151);
+	}
+	&.add-member{
+		background-color: $sub-color;
+		border: 3px solid white;
+	}
+}
+.menu-popup{
+	.MuiMenu-paper{
+		margin-left: 1rem;
+		.MuiListItem-root{
+			font-size: 14px;
+			.MuiListItemIcon-root{
+				margin-right: 7px;
+				min-width: auto;
+				.MuiSvgIcon-root{
+					font-size: 20px;
+				}
+			}
+		}
+	}
+}

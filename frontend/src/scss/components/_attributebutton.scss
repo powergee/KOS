@@ -1,0 +1,30 @@
+.attributebutton{
+	margin: 8px 30px 8px 0px;
+	.attribute{
+		padding: 3px 0px;
+		width: 11.25rem;
+		text-align: center;
+		font-size: 1.125rem;
+		color: white;
+		background-color: $sub-color;
+		border-radius: $radius;
+		.delete{
+			position: absolute;
+			button{
+				svg{
+						font-size: 1.0rem;						
+						border-radius: $radius;
+						border: 1.4px solid white;
+						color: white;
+				}
+			}
+		}
+		.add{
+			button{
+				width: 11.25rem;
+				font-size: 15px;
+				color: white;
+			}
+		}
+	}
+}

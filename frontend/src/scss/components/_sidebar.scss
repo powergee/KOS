@@ -48,6 +48,9 @@
 		.side-project{
 			display: flex;
 			flex-direction: column;
+			&.bookmark{
+				order: -1;
+			}
 			.project-info{
 				display: flex;
 				justify-content: space-between;
@@ -59,67 +62,29 @@
 				}
 				.info{
 					width: 65%;
+					cursor: pointer;
+					.project-name{
+						font-size: $md-font;
+						flex-shrink: 1!important;
+						word-break: break-all;
+					}
 					.bg-color{
 						margin-right: 10px;
+						border : 2px solid white;
+						border-radius: $radius;
 					}
 					&>div{
 						margin-right: 3px;
 						flex-shrink: 0;
 					}
 				}
-				.project-name{
-					font-size: 1.4rem;
-					flex-shrink: 1!important;
-					word-break: break-all;
-				}
 				.detail{
 					width: 20%;
-					.private, .book-mark{
-						svg{
-							font-size: 2rem;
-						}
-					}
-					.book-mark{
-						color: rgb(255, 217, 0);
-					}
+					min-width: 70px;
 				}
 				.arrow{
 					width: 15%;
-					flex-shrink: 0;
-					.btn svg{
-						font-size: 2.5rem;
-						color: white;
-					}
-				}
-			}
-			.sub-menu{
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				height: 90px;
-				background-color: $base-color;
-				padding: 0 10px;
-				color: $main-color;
-				&>div{
-					display: flex;
-					flex-direction: column;
-					align-items: center;
-					.btn{
-						width: 40px;
-						height: 40px;
-						button{
-							width: 100%;
-							height: 100%;
-						}
-						svg{
-							color: $main-color;
-						}
-					}
-					p{
-						font-size: 0.8rem;
-						margin: 5px 0 0;
-						font-weight: 600;
-					}
+					min-width: 40px;
 				}
 			}
 		}
@@ -136,7 +101,93 @@
 		}
 		& button{
 			color: white;
-			font-size: 1.4rem;
+			font-size: $md-font;
+		}
+	}
+	@keyframes slide-out {
+		0%{
+		}
+		100%{
+			width: 400px;
+			margin-left: -400px;
+		}
+	}
+	@keyframes slide-in {
+		0%{
+			margin-left: -400px;
+			width: 400px;
+		}
+		100%{
+		}
+	}
+	&.visible{
+		animation: slide-in 0.7s ease-in-out forwards;
+	}
+	&.unvisible{
+		animation: slide-out 0.7s ease-in-out forwards;
+	}
+}
+
+/*project-modal-con*/
+.project-modal-con{
+	.pm-btn-con{
+		width: auto;
+		.pm-private-btn{
+			background-color: $base-color;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 35px;
+			height: 35px;
+			margin-right: 10px;
+			&.selected{
+				background-color: $sub-color;
+			}
+			&:hover{
+				box-shadow: 0 0 1px $shadow-color;
+			}
+			button{
+				&:hover{
+					box-shadow: none;
+				}
+				color: white;
+			}
+		}
+	}
+}
+
+/* use in sideMenu too */
+.submenu-window-con {
+	.p-contents-con{
+		margin-top: 2rem;
+		&>div{
+			flex-wrap: nowrap;
+			margin-bottom: 20px;
+		}
+	}
+	.p-key-con{
+		width: 130px;
+		text-align: center;
+		background-color: $sub-color;
+		color: white;
+		border-radius: $radius;
+		display: flex;
+		align-items: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-right: 1rem;
+		flex-shrink: 0;
+	}
+	.p-value-con{
+		width: 100%;
+	}
+	.p-btn-con{
+		display: flex;
+		justify-content: flex-end;
+		width: 100%;
+		.save-btn{
+			padding: 5px 10px;
 		}
 	}
 }

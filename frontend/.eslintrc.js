@@ -1,6 +1,12 @@
 module.exports = {
 	'parser': '@typescript-eslint/parser',
-	'plugins': ['@typescript-eslint'],
+	'plugins': [
+		'@typescript-eslint',
+		'eslint-plugin-jsx-a11y',
+		'eslint-plugin-react',
+		'eslint-plugin-react-hooks'
+	],
+	'root': true,
 	'env': {
 		'commonjs': true,
 		'browser': true,
@@ -48,12 +54,16 @@ module.exports = {
 		'react/jsx-props-no-spreading': ['warn'], // props로 받은 것 바로 props로 넘기기 허용
 		'max-len': ['warn'], // 길이 100이 넘어가도 warning 만 하기
 		'react/jsx-boolean-value': 0, // boolean 못넘기게 하는 룰 없애기
-		'react-hooks/exhaustive-deps': 'warn' // Checks effect dependencies
+		'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
+		'@typescript-eslint/no-empty-function': 0, // ()=>{} 가능하게 하기
+		'prefer-destructuring': ['warn'],
 	},
 	'settings': {
 		'react': {
 			'version': 'detect',
 		},
+		"import/no-unresolved": 0, // Turn off "Unable to resolve path to module ..." error
+		"import/extensions": 0, // Turn off "Missing file extension for ..." error
 		'import/resolver': {
 			'node': {
 				'extensions': ['.js', '.jsx', '.ts', '.tsx']

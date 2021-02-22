@@ -1,6 +1,6 @@
 import React, { createRef, Dispatch } from 'react';
 import {
-	useOpenState, useOpenDispatch, useProjectState, useProjectDispatch, ProjectObj
+	useOpenState, useOpenDispatch
 } from './Model';
 import { SideBarView, PageView } from './View';
 
@@ -10,32 +10,31 @@ const pageRef = createRef<HTMLDivElement>();
 // View Model은 Model의 Context를 구독하고, 갱신하는 역할
 const ViewModel = () => {
 	const open : boolean = useOpenState();
-	const setOpen : Dispatch<boolean> | undefined = useOpenDispatch();
-	const project : Array<ProjectObj> | undefined = useProjectState();
-	const setProject : Dispatch<Array<ProjectObj>> | undefined = useProjectDispatch();
-
+	const setOpen : Dispatch<boolean> = useOpenDispatch();
 	const handleSideBarOpen = () => {
-		if (setOpen !== undefined) setOpen(true);
+		setOpen(true);
 	};
 
 	const handleSideBarClose = () => {
-		if (setOpen !== undefined) setOpen(false);
+		setOpen(false);
 	};
 
 	return (
 		<>
 			{
-				open ?
-					<SideBarView
-						handleSideBarClose={handleSideBarClose}
-						project={project}
-						ref={sidebarRef}
-					/> : undefined
+				open ? <SideBarView
+					type="visible"
+					handleSideBarClose={handleSideBarClose}
+					ref={sidebarRef}
+				/> : <SideBarView
+					type="unvisible"
+					handleSideBarClose={handleSideBarClose}
+					ref={sidebarRef}
+				/>
 			}
 			<PageView
 				handleSideBarOpen={handleSideBarOpen}
 				open={open}
-				project={project}
 				ref={pageRef}
 			/>
 		</>
